@@ -13,21 +13,30 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "sanity-start": "sanity start"
   },
   "dependencies": {
     "@next/font": "13.1.0",
+    "@sanity/image-url": "^1.0.1",
+    "@sanity/vision": "^3.1.2",
+    "@sanity/webhook": "^2.0.0",
     "@tailwindcss/forms": "^0.5.3",
     "next": "13.1.0",
+    "next-mdx-remote": "^4.2.0",
+    "next-sanity": "^3.1.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "sanity": "^3.1.2",
+    "sanity-plugin-markdown": "^3.0.1",
+    "styled-components": "^5.2"
   },
-  "packageManager": "yarn@3.3.1",
   "devDependencies": {
     "@types/node": "18.11.17",
     "@types/prettier": "^2",
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.9",
+    "@types/styled-components": "^5",
     "@yarnpkg/pnpify": "^4.0.0-rc.34",
     "autoprefixer": "^10.4.13",
     "eslint": "8.30.0",
@@ -37,5 +46,11 @@
     "prettier-plugin-tailwindcss": "^0.2.1",
     "tailwindcss": "^3.2.4",
     "typescript": "4.9.4"
+  },
+  "prettier": {
+    "semi": false,
+    "printWidth": 100,
+    "bracketSpacing": false,
+    "singleQuote": true
   }
 }
