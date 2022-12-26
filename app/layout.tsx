@@ -16,13 +16,15 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <head />
       <body
         className={clsx(
-          'bg-white dark:bg-black text-white dark:text-black',
-          interVariable.className
+          interVariable.className,
+          'bg-white dark:bg-black text-white dark:text-black'
         )}
       >
-        <ThemeProvider>
-          <Container>{children}</Container>
-        </ThemeProvider>
+        <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-900">
+          <ThemeProvider>
+            <Container>{children}</Container>
+          </ThemeProvider>
+        </div>
         <AnalyticsProvider />
       </body>
     </html>

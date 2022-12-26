@@ -3,7 +3,7 @@ import Link from 'next/link'
 import {usePathname} from 'next/navigation'
 import clsx from 'clsx'
 
-type NavItemProps = {
+type NavItemTypes = {
   href: string
   text: string
 }

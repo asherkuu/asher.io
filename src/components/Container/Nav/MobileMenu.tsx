@@ -1,14 +1,14 @@
 'use client'
 
 import React, {useState, useEffect} from 'react'
-import useDelayedRender from 'use-delayed-render'
 import Link from 'next/link'
+import clsx from 'clsx'
+import useDelayedRender from 'use-delayed-render'
 
 import styles from 'styles/mobile-menu.module.css'
-import clsx from 'clsx'
 
 const MobileMenu: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
   const {mounted: isMenuMounted, rendered: isMenuRendered} = useDelayedRender(isMenuOpen, {
     enterDelay: 20,
     exitDelay: 300,
@@ -53,7 +53,7 @@ const MobileMenu: React.FC = () => {
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{transitionDelay: '150ms'}}
           >
-            <Link href="/" className="flex w-auto pb-4">
+            <Link href="/" className="flex w-auto p-2" passHref>
               Home
             </Link>
           </li>
@@ -61,7 +61,7 @@ const MobileMenu: React.FC = () => {
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{transitionDelay: '175ms'}}
           >
-            <Link href="/guestbook" className="flex w-auto pb-4">
+            <Link href="/guestbook" className="flex w-auto p-2" passHref>
               Guestbook
             </Link>
           </li>
@@ -69,7 +69,7 @@ const MobileMenu: React.FC = () => {
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{transitionDelay: '200ms'}}
           >
-            <Link href="/dashboard" className="flex w-auto pb-4">
+            <Link href="/dashboard" className="flex w-auto p-2" passHref>
               Dashboard
             </Link>
           </li>
@@ -77,7 +77,7 @@ const MobileMenu: React.FC = () => {
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{transitionDelay: '250ms'}}
           >
-            <Link href="/blog" className="flex w-auto pb-4">
+            <Link href="/blog" className="flex w-auto p-2" passHref>
               Blog
             </Link>
           </li>
@@ -85,7 +85,7 @@ const MobileMenu: React.FC = () => {
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{transitionDelay: '275ms'}}
           >
-            <Link href="/snippets" className="flex w-auto pb-4">
+            <Link href="/snippets" className="flex w-auto p-2" passHref>
               Snippets
             </Link>
           </li>
@@ -93,7 +93,7 @@ const MobileMenu: React.FC = () => {
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{transitionDelay: '300ms'}}
           >
-            <Link href="/newsletter" className="flex w-auto pb-4">
+            <Link href="/newsletter" className="flex w-auto p-2" passHref>
               Newsletter
             </Link>
           </li>
@@ -101,7 +101,7 @@ const MobileMenu: React.FC = () => {
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{transitionDelay: '325ms'}}
           >
-            <Link href="/tweets" className="flex w-auto pb-4">
+            <Link href="/tweets" className="flex w-auto p-2" passHref>
               Tweets
             </Link>
           </li>
@@ -109,7 +109,7 @@ const MobileMenu: React.FC = () => {
             className="border-b border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 text-sm font-semibold"
             style={{transitionDelay: '350ms'}}
           >
-            <Link href="/uses" className="flex w-auto pb-4">
+            <Link href="/uses" className="flex w-auto p-2" passHref>
               Uses
             </Link>
           </li>

@@ -1,20 +1,21 @@
+import Bio from '#/src/components/main/Bio'
+
+import {Post} from '#/src/sanity/types'
 import {getClient} from '#/src/sanity/sanity-server'
 import {indexQuery} from '#/src/sanity/queries'
-import {Post} from '#/src/sanity/types'
 
 export default async function Page() {
   const data = await getData()
   console.log('🚀 ~ file: page.tsx:7 ~ Page ~ data', data)
 
   return (
-    <div className="space-y-8">
-      <h1 className="text-xl font-medium text-gray-300">Examples</h1>
-
-      {data?.map((post) => (
+    <div className="flex flex-col justify-center items-start max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pb-16">
+      <Bio />
+      {/* {data?.map((post) => (
         <div key={post._id} className="text-xl font-medium text-gray-500">
           {post.title}
         </div>
-      ))}
+      ))} */}
     </div>
   )
 }

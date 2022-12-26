@@ -3,7 +3,7 @@
 import React from 'react'
 import {ThemeProvider as NextThemeProvider} from 'next-themes'
 
-type ThemeProviderProps = {
+type ThemeProviderTypes = {
   children: React.ReactNode
 }
 

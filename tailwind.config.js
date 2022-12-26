@@ -1,13 +1,8 @@
-const colors = require('tailwindcss/colors')
 const {spacing, fontFamily} = require('tailwindcss/defaultTheme')
 
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./app/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./app/**/*.tsx', './src/**/*.tsx'],
   darkMode: 'class',
-  future: {
-    hoverOnlyWhenSupported: true,
-  },
   theme: {
     extend: {
       colors: {
@@ -99,5 +94,5 @@ module.exports = {
   variants: {
     typography: ['dark'],
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/typography')],
 }
