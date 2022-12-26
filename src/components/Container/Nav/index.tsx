@@ -2,7 +2,8 @@
 
 import React from 'react'
 import {useTheme} from 'next-themes'
-import NavItem from '#/src/components/Container/NavItem'
+import NavItem from '#/src/components/Container/Nav/NavItem'
+import MobileMenu from '#/src/components/Container/Nav/MobileMenu'
 
 const Nav = () => {
   const {resolvedTheme, setTheme} = useTheme()
@@ -13,7 +14,7 @@ const Nav = () => {
         Skip to content
       </a>
       <div className="ml-[-0.60rem]">
-        {/* <MobileMenu /> */}
+        <MobileMenu />
         <NavItem href="/" text="Home" />
         <NavItem href="/guestbook" text="Guestbook" />
         <NavItem href="/dashboard" text="Dashboard" />

@@ -1,77 +1,103 @@
-const colors = require("tailwindcss/colors");
+const colors = require('tailwindcss/colors')
+const {spacing, fontFamily} = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./app/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   future: {
     hoverOnlyWhenSupported: true,
   },
   theme: {
     extend: {
-      // https://vercel.com/design/color
       colors: {
-        gray: colors.zinc,
-        "gray-1000": "rgb(17,17,19)",
-        "gray-1100": "rgb(10,10,11)",
-        vercel: {
-          pink: "#FF0080",
-          blue: "#0070F3",
-          cyan: "#50E3C2",
-          orange: "#F5A623",
-          violet: "#7928CA",
+        'blue-opaque': 'rgb(13 42 148 / 18%)',
+        gray: {
+          0: '#fff',
+          100: '#fafafa',
+          200: '#eaeaea',
+          300: '#999999',
+          400: '#888888',
+          500: '#666666',
+          600: '#444444',
+          700: '#333333',
+          800: '#222222',
+          900: '#111111',
         },
       },
-      backgroundImage: ({ theme }) => ({
-        "vc-border-gradient": `radial-gradient(at left top, ${theme(
-          "colors.gray.500"
-        )}, 50px, ${theme("colors.gray.800")} 50%)`,
-      }),
-      keyframes: ({ theme }) => ({
-        rerender: {
-          "0%": {
-            ["border-color"]: theme("colors.vercel.pink"),
-          },
-          "40%": {
-            ["border-color"]: theme("colors.vercel.pink"),
-          },
-        },
-        highlight: {
-          "0%": {
-            background: theme("colors.vercel.pink"),
-            color: theme("colors.white"),
-          },
-          "40%": {
-            background: theme("colors.vercel.pink"),
-            color: theme("colors.white"),
-          },
-        },
-        shimmer: {
-          "100%": {
-            transform: "translateX(100%)",
+      fontFamily: {
+        sans: ['Inter', ...fontFamily.sans],
+      },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.gray.700'),
+            a: {
+              color: theme('colors.blue.500'),
+              '&:hover': {
+                color: theme('colors.blue.700'),
+              },
+              code: {color: theme('colors.blue.400')},
+            },
+            'h2,h3,h4': {
+              'scroll-margin-top': spacing[32],
+            },
+            thead: {
+              borderBottomColor: theme('colors.gray.200'),
+            },
+            code: {color: theme('colors.pink.500')},
+            'blockquote p:first-of-type::before': false,
+            'blockquote p:last-of-type::after': false,
           },
         },
-        translateXReset: {
-          "100%": {
-            transform: "translateX(0)",
-          },
-        },
-        fadeToTransparent: {
-          "0%": {
-            opacity: 1,
-          },
-          "40%": {
-            opacity: 1,
-          },
-          "100%": {
-            opacity: 0,
+        dark: {
+          css: {
+            color: theme('colors.gray.200'),
+            a: {
+              color: theme('colors.blue.400'),
+              '&:hover': {
+                color: theme('colors.blue.600'),
+              },
+              code: {color: theme('colors.blue.400')},
+            },
+            blockquote: {
+              borderLeftColor: theme('colors.gray.700'),
+              color: theme('colors.gray.300'),
+            },
+            'h2,h3,h4': {
+              color: theme('colors.gray.100'),
+              'scroll-margin-top': spacing[32],
+            },
+            hr: {borderColor: theme('colors.gray.700')},
+            ol: {
+              li: {
+                '&:before': {color: theme('colors.gray.500')},
+              },
+            },
+            ul: {
+              li: {
+                '&:before': {backgroundColor: theme('colors.gray.500')},
+              },
+            },
+            strong: {color: theme('colors.gray.100')},
+            thead: {
+              th: {
+                color: theme('colors.gray.100'),
+              },
+              borderBottomColor: theme('colors.gray.600'),
+            },
+            tbody: {
+              tr: {
+                borderBottomColor: theme('colors.gray.700'),
+              },
+            },
           },
         },
       }),
     },
   },
-  plugins: [require("@tailwindcss/forms")],
-};
+  variants: {
+    typography: ['dark'],
+  },
+  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+}

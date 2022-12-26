@@ -6,6 +6,7 @@ specifiers:
   '@sanity/vision': ^3.1.2
   '@sanity/webhook': ^2.0.0
   '@tailwindcss/forms': ^0.5.3
+  '@tailwindcss/typography': ^0.5.8
   '@types/node': 18.11.17
   '@types/prettier': ^2
   '@types/react': 18.0.26
@@ -31,6 +32,7 @@ specifiers:
   styled-components: ^5.2
   tailwindcss: ^3.2.4
   typescript: 4.9.4
+  use-delayed-render: ^0.0.7
 
 dependencies:
   '@next/font': 13.1.0
@@ -38,6 +40,7 @@ dependencies:
   '@sanity/vision': 3.1.2_2zpt4ilzykmne4yndyzrqd4gdm
   '@sanity/webhook': 2.0.0
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.4
+  '@tailwindcss/typography': 0.5.8_tailwindcss@3.2.4
   '@vercel/analytics': 0.1.6_react@18.2.0
   clsx: 1.2.1
   next: 13.1.0_biqbaboplfbrettd7655fr4n2y
@@ -49,6 +52,7 @@ dependencies:
   sanity: 3.1.2_wkcclcmf233j5s6o2fmhlmcblm
   sanity-plugin-markdown: 3.0.1_wtm6vydzaa4b6yccp2rsv7ytim
   styled-components: 5.3.6_biqbaboplfbrettd7655fr4n2y
+  use-delayed-render: 0.0.7_react@18.2.0
 
 devDependencies:
   '@types/node': 18.11.17
@@ -1448,6 +1452,18 @@ packages:
       tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1'
     dependencies:
       mini-svg-data-uri: 1.4.4
+      tailwindcss: 3.2.4_postcss@8.4.20
+    dev: false
+
+  /@tailwindcss/typography/0.5.8_tailwindcss@3.2.4:
+    resolution: {integrity: sha512-xGQEp8KXN8Sd8m6R4xYmwxghmswrd0cPnNI2Lc6fmrC3OojysTBJJGSIVwPV56q4t6THFUK3HJ0EaWwpglSxWw==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || insiders'
+    dependencies:
+      lodash.castarray: 4.4.0
+      lodash.isplainobject: 4.0.6
+      lodash.merge: 4.6.2
+      postcss-selector-parser: 6.0.10
       tailwindcss: 3.2.4_postcss@8.4.20
     dev: false
 
@@ -5053,6 +5069,10 @@ packages:
     dependencies:
       p-locate: 5.0.0
 
+  /lodash.castarray/4.4.0:
+    resolution: {integrity: sha512-aVx8ztPv7/2ULbArGJ2Y42bG1mEQ5mGjpdvrbJcJFU3TbYybe+QlLS4pst9zV52ymy2in1KpFPiZnAOATxD4+Q==}
+    dev: false
+
   /lodash.defaults/4.2.0:
     resolution: {integrity: sha512-qjxPLHd3r5DnsdGacqOMU6pb/avJzdh9tFX2ymgoZE27BmjXrNy/y4LoaiTeAb+O3gL8AfpJGtqfX/ae2leYYQ==}
     dev: false
@@ -5071,7 +5091,6 @@ packages:
 
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
-    dev: true
 
   /lodash.union/4.6.0:
     resolution: {integrity: sha512-c4pB2CdGrGdjMKYLA+XiRDO7Y0PRQbm/Gzg8qMj+QH+pFVAoTp5sBpO0odL3FjoPCGjK96p6qsP+yQoiLoOBcw==}
@@ -6336,6 +6355,14 @@ packages:
     dependencies:
       postcss: 8.4.20
       postcss-selector-parser: 6.0.11
+
+  /postcss-selector-parser/6.0.10:
+    resolution: {integrity: sha512-IQ7TZdoaqbT+LCpShg46jnZVlhWD2w6iQYAcYXfHARZ7X1t/UGhhceQDs5X0cGqKvYlHNOuv7Oa1xmb0oQuA3w==}
+    engines: {node: '>=4'}
+    dependencies:
+      cssesc: 3.0.0
+      util-deprecate: 1.0.2
+    dev: false
 
   /postcss-selector-parser/6.0.11:
     resolution: {integrity: sha512-zbARubNdogI9j7WY4nQJBiNqQf3sLS3wCP4WfOidu+p28LofJqDH1tcXypGrcmMHhDk2t9wGhCsYe/+szLTy1g==}
@@ -7915,6 +7942,14 @@ packages:
       '@types/react': 18.0.26
       react: 18.2.0
       tslib: 2.4.1
+    dev: false
+
+  /use-delayed-render/0.0.7_react@18.2.0:
+    resolution: {integrity: sha512-Lb4Sd4P50CYRQ5k2Y9SRjMDTBG3Ous7TmfCGOzabKZf3ibQwIuyF3M2q6iiGLH+BicXZJumXgJDeHRnAfZM7Gg==}
+    peerDependencies:
+      react: ^16.13.1
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /use-device-pixel-ratio/1.1.2_react@18.2.0:

@@ -16,7 +16,7 @@ export default function RootLayout({children}: {children: React.ReactElement}) {
       <head />
       <body
         className={clsx(
-          "overflow-y-scroll bg-gray-1100 bg-[url('/grid.svg')]",
+          'bg-white dark:bg-black text-white dark:text-black',
           interVariable.className
         )}
       >
