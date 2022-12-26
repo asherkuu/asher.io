@@ -1,7 +1,7 @@
 import React from 'react'
 import Nav from '#/src/components/Container/Nav'
 
-const Container = ({children}: {children: React.ReactElement}) => {
+const Container = ({children}: {children: React.ReactNode}) => {
   return (
     <div className="bg-gray-50 dark:bg-gray-900">
       <div className="flex flex-col justify-center px-8">

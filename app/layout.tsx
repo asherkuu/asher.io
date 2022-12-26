@@ -10,7 +10,7 @@ import '#/styles/globals.css'
 
 const interVariable = Inter()
 
-export default function RootLayout({children}: {children: React.ReactElement}) {
+export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className="[color-scheme:dark]">
       <head />
