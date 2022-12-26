@@ -2,6 +2,8 @@ import {getClient} from '#/src/sanity/sanity-server'
 import {indexQuery} from '#/src/sanity/queries'
 import {Post} from '#/src/sanity/types'
 
+import {Analytics} from '@vercel/analytics/react'
+
 export default async function Page() {
   const data = await getData()
   console.log('🚀 ~ file: page.tsx:7 ~ Page ~ data', data)
