@@ -7,7 +7,7 @@ type ThemeProviderTypes = {
   children: React.ReactNode
 }
 
-const ThemeProvider: React.FC<ThemeProviderProps> = ({children}) => {
+const ThemeProvider: React.FC<ThemeProviderTypes> = ({children}) => {
   return <NextThemeProvider attribute="class">{children}</NextThemeProvider>
 }
 

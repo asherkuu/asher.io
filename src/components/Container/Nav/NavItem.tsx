@@ -8,7 +8,7 @@ type NavItemTypes = {
   text: string
 }
 
-const NavItem: React.FC<NavItemProps> = ({href, text}) => {
+const NavItem: React.FC<NavItemTypes> = ({href, text}) => {
   const pathname = usePathname()
   const isActive = pathname === href
 

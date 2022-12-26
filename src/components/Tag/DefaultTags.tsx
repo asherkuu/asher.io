@@ -5,7 +5,7 @@ type DefaultTagsTypes = {
   customMeta?: object
 }
 
-const DefaultTags: React.FC<DefaultTagsProps> = ({customMeta}) => {
+const DefaultTags: React.FC<DefaultTagsTypes> = ({customMeta}) => {
   const pathname = usePathname()
   const meta = {
     title: '김선규 – Developer, drawer.',
