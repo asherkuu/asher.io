@@ -41,7 +41,7 @@ const MobileMenu: React.FC = () => {
         <MenuIcon data-hide={isMenuOpen} />
         <CrossIcon data-hide={!isMenuOpen} />
       </button>
-      {isMenuOpen && (
+      {isMenuMounted && (
         <ul
           className={clsx(
             styles.menu,
