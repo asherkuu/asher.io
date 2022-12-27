@@ -13,8 +13,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint-staged": "lint-staged",
-    "sanity-start": "sanity start"
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "@next/font": "13.1.0",
@@ -51,11 +50,5 @@
     "prettier-plugin-tailwindcss": "^0.2.1",
     "tailwindcss": "^3.2.4",
     "typescript": "4.9.4"
-  },
-  "prettier": {
-    "semi": false,
-    "printWidth": 100,
-    "bracketSpacing": false,
-    "singleQuote": true
   }
 }
