@@ -1,15 +1,28 @@
-import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import {MDXRemoteSerializeResult} from "next-mdx-remote";
 
-export type Post = {
+export type ProjectType = "TOY" | "WORK";
+export type Summaries = {
+  _createdAt: Date;
+  _id: string;
+  _rev: string;
+  _type: "projectSummaries";
+  _updatedAt: Date;
+  description: string;
+  title: string;
+};
+
+export type Project = {
   _id: string;
   slug: string;
-  content: MDXRemoteSerializeResult;
+  body: MDXRemoteSerializeResult;
   title: string;
-  date: string;
-  excerpt: string;
-  coverImage: string;
-  readingTime: string;
-  tweets: any[];
+  description: string;
+  workStartedAt: Date;
+  workEndedAt: Date;
+  isPublished: boolean;
+  publishedAt: Date;
+  summaries: Summaries[];
+  projectType: ProjectType;
 };
 
 export type Snippet = {
@@ -25,7 +38,7 @@ export enum Form {
   Initial,
   Loading,
   Success,
-  Error
+  Error,
 }
 
 export type FormState = {
