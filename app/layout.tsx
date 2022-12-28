@@ -1,15 +1,17 @@
-import React from 'react'
-import {Inter} from '@next/font/google'
-import clsx from 'clsx'
+import React from "react";
+import dynamic from "next/dynamic";
+import {Inter} from "@next/font/google";
+import clsx from "clsx";
 
-import AnalyticsProvider from '#/src/components/provider/AnalyticsProvider'
-import ThemeProvider from '#/src/components/provider/ThemeProvider'
-import Container from '#/src/components/Container'
+import Container from "#/src/components/Container";
+import ThemeProvider from "#/src/components/provider/ThemeProvider";
+import AnalyticsProvider from "#/src/components/provider/AnalyticsProvider";
 
-import '#/styles/globals.css'
-import Contact from '#/src/components/Contact'
+const Contact = dynamic(() => import("#/src/components/Contact"), {ssr: false});
 
-const interVariable = Inter()
+import "#/styles/globals.css";
+
+const interVariable = Inter();
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
@@ -18,17 +20,25 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       <body
         className={clsx(
           interVariable.className,
-          'bg-white dark:bg-black text-white dark:text-black'
+          "bg-white dark:bg-black text-white dark:text-black",
         )}
       >
-        <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-900">
-          <ThemeProvider>
+        <ThemeProvider>
+          <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-900">
             <Container>{children}</Container>
-            <Contact />
-          </ThemeProvider>
-        </div>
+          </div>
+
+          <div
+            id="__contact"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="overlay"
+            aria-label="modal"
+          />
+          <Contact />
+        </ThemeProvider>
         <AnalyticsProvider />
       </body>
     </html>
-  )
+  );
 }
