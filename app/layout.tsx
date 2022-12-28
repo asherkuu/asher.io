@@ -7,6 +7,7 @@ import ThemeProvider from '#/src/components/provider/ThemeProvider'
 import Container from '#/src/components/Container'
 
 import '#/styles/globals.css'
+import Contact from '#/src/components/Contact'
 
 const interVariable = Inter()
 
@@ -23,6 +24,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-900">
           <ThemeProvider>
             <Container>{children}</Container>
+            <Contact />
           </ThemeProvider>
         </div>
         <AnalyticsProvider />
