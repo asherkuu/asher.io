@@ -10,7 +10,7 @@ import LabelInput from "#/src/components/Controls/LabelInput";
 import LabelTextareaField from "#/src/components/Controls/LabelTextarea";
 import IconCross from "#/src/components/Icons/IconCross";
 
-import {TELEGRAM_ENV} from "#/public/constant/env";
+import {TELEGRAM_ENV} from "public/constant/env";
 
 const intialInformation = {
   phoneNumber: null,
@@ -33,15 +33,15 @@ const Contact = () => {
     exitDelay: EXIT_DELAY,
   });
 
-  useLayoutEffect(() => {
-    const timer = setTimeout(() => {
-      setIsOpen(prev => !prev);
-    }, OPEN_TIMER);
+  // useLayoutEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setIsOpen(prev => !prev);
+  //   }, OPEN_TIMER);
 
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
+  //   return () => {
+  //     clearTimeout(timer);
+  //   };
+  // }, []);
 
   const sendMessage = (e: React.FormEvent<HTMLFormElement>) => {
     const token = TELEGRAM_ENV.token;
@@ -94,6 +94,7 @@ const Contact = () => {
                 label={<IconCross />}
                 className="row-center w-12 h-12"
                 onClick={handleDismiss}
+                ariaLabelledby="Close Button"
               />
             </div>
             <form className="space-y-6" onSubmit={handleSubmit}>
@@ -131,7 +132,13 @@ const Contact = () => {
                   rows={10}
                 />
               </div>
-              <Button type="submit" label="Send" className="row-center w-full" variant="primary" />
+              <Button
+                type="submit"
+                label="Send"
+                className="row-center w-full"
+                variant="primary"
+                ariaLabelledby="Send Button"
+              />
             </form>
           </div>
         </div>

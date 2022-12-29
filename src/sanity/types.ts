@@ -17,10 +17,13 @@ export type Project = {
   body: MDXRemoteSerializeResult;
   title: string;
   description: string;
-  workStartedAt: Date;
-  workEndedAt: Date;
+  belong: string;
+  position: string;
+  workedAt: string;
+  workStartedAt: string;
+  workEndedAt: string;
   isPublished: boolean;
-  publishedAt: Date;
+  publishedAt: string;
   summaries: Summaries[];
   projectType: ProjectType;
 };

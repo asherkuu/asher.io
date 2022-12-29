@@ -1,7 +1,7 @@
 "use client";
-import {indexQuery} from "#/src/sanity/queries/project";
-import {Project} from "#/src/sanity/types";
-import {sanityFetch} from "#/src/util/fetch";
+import {indexQuery} from "src/sanity/queries/project";
+import {Project} from "src/sanity/types";
+import {sanityFetch} from "src/util/fetch";
 import React, {useEffect, useState} from "react";
 
 const Tddd = () => {

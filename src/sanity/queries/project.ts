@@ -3,6 +3,7 @@ const projectFields = `
   title,
   description,
   projectType,
+  workedAt,
   workStartedAt,
   workEndedAt,
   isPublished,

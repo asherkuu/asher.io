@@ -1,6 +1,6 @@
-import React, {forwardRef} from 'react';
-import clsx from 'clsx';
-import TextareaField, {TextareaFieldTypes} from '#/src/components/Controls/TextareaField';
+import React, {forwardRef} from "react";
+import clsx from "clsx";
+import TextareaField, {TextareaFieldTypes} from "#/src/components/Controls/TextareaField";
 
 type LabelTextareaFieldTypes = {
   htmlFor?: string;
@@ -11,17 +11,17 @@ type LabelTextareaFieldTypes = {
 const LabelTextareaField = forwardRef<HTMLTextAreaElement, LabelTextareaFieldTypes>(
   (
     {
-      htmlFor = 'text',
-      label = 'label',
+      htmlFor = "text",
+      label = "label",
       labelClassName = undefined,
-      id = 'input',
+      id = "input",
       className = undefined,
       placeholder = undefined,
       ariaDescribedby = undefined,
       required = false,
       rows = 4,
     },
-    ref
+    ref,
   ) => {
     return (
       <>
@@ -29,7 +29,7 @@ const LabelTextareaField = forwardRef<HTMLTextAreaElement, LabelTextareaFieldTyp
           htmlFor={htmlFor}
           className={clsx(
             labelClassName,
-            'block mb-2 text-sm font-medium text-gray-900 dark:text-white'
+            "block mb-2 text-sm font-medium text-gray-900 dark:text-white",
           )}
         >
           {label}
@@ -45,8 +45,8 @@ const LabelTextareaField = forwardRef<HTMLTextAreaElement, LabelTextareaFieldTyp
         />
       </>
     );
-  }
+  },
 );
 
-LabelTextareaField.displayName = 'LabelTextareaField';
+LabelTextareaField.displayName = "LabelTextareaField";
 export default LabelTextareaField;

@@ -1,12 +1,12 @@
-'use client'
+"use client";
 
-import React from 'react'
-import {useTheme} from 'next-themes'
-import NavItem from '#/src/components/Container/Nav/NavItem'
-import MobileMenu from '#/src/components/Container/Nav/MobileMenu'
+import React from "react";
+import {useTheme} from "next-themes";
+import NavItem from "#/src/components/Container/Nav/NavItem";
+import MobileMenu from "#/src/components/Container/Nav/MobileMenu";
 
 const Nav = () => {
-  const {resolvedTheme, setTheme} = useTheme()
+  const {resolvedTheme, setTheme} = useTheme();
 
   return (
     <nav className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pt-8 pb-8 sm:pb-16  text-gray-900 bg-gray-50  dark:bg-gray-900 bg-opacity-60 dark:text-gray-100">
@@ -16,16 +16,17 @@ const Nav = () => {
       <div className="ml-[-0.60rem]">
         <MobileMenu />
         <NavItem href="/" text="Home" />
+        <NavItem href="/experience" text="Experience" />
         <NavItem href="/guestbook" text="Guestbook" />
-        <NavItem href="/dashboard" text="Dashboard" />
+        {/* <NavItem href="/dashboard" text="Dashboard" />
         <NavItem href="/blog" text="Blog" />
-        <NavItem href="/snippets" text="Snippets" />
+        <NavItem href="/snippets" text="Snippets" /> */}
       </div>
       <button
         aria-label="Toggle Dark Mode"
         type="button"
         className="w-9 h-9 bg-gray-200 rounded-lg dark:bg-gray-600 flex items-center justify-center  hover:ring-2 ring-gray-300  transition-all"
-        onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+        onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +35,7 @@ const Nav = () => {
           stroke="currentColor"
           className="w-5 h-5 text-gray-800 dark:text-gray-200"
         >
-          {resolvedTheme === 'dark' ? (
+          {resolvedTheme === "dark" ? (
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -52,7 +53,7 @@ const Nav = () => {
         </svg>
       </button>
     </nav>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

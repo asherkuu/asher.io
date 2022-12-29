@@ -1,6 +1,6 @@
-import React, {forwardRef} from 'react';
-import clsx from 'clsx';
-import TextInput, {TextInputTypes} from '#/src/components/Controls/TextInput';
+import React, {forwardRef} from "react";
+import clsx from "clsx";
+import TextInput, {TextInputTypes} from "#/src/components/Controls/TextInput";
 
 type LabelInputTypes = {
   htmlFor?: string;
@@ -11,18 +11,18 @@ type LabelInputTypes = {
 const LabelInput = forwardRef<HTMLInputElement, LabelInputTypes>(
   (
     {
-      htmlFor = 'text',
-      label = 'label',
+      htmlFor = "text",
+      label = "label",
       labelClassName = undefined,
-      type = 'text',
-      id = 'input',
+      type = "text",
+      id = "input",
       className = undefined,
       placeholder = undefined,
       ariaDescribedby = undefined,
       required = false,
       maxLength = undefined,
     },
-    ref
+    ref,
   ) => {
     return (
       <>
@@ -30,7 +30,7 @@ const LabelInput = forwardRef<HTMLInputElement, LabelInputTypes>(
           htmlFor={htmlFor}
           className={clsx(
             labelClassName,
-            'block mb-2 text-sm font-medium text-gray-900 dark:text-white'
+            "block mb-2 text-sm font-medium text-gray-900 dark:text-white",
           )}
         >
           {label}
@@ -47,8 +47,8 @@ const LabelInput = forwardRef<HTMLInputElement, LabelInputTypes>(
         />
       </>
     );
-  }
+  },
 );
 
-LabelInput.displayName = 'LabelInput';
+LabelInput.displayName = "LabelInput";
 export default LabelInput;

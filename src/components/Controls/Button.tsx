@@ -8,6 +8,7 @@ type ButtonTypes = {
   label: React.ReactNode;
   hasBorder?: boolean;
   onClick?: (e: React.MouseEvent<HTMLElement>) => void;
+  ariaLabelledby?: string;
 };
 
 const variantTheme = {
@@ -24,12 +25,15 @@ const Button: React.FC<ButtonTypes> = ({
   label = "button",
   hasBorder = false,
   onClick,
+  ariaLabelledby = "button",
 }) => {
   return (
     <button
       type={type}
       className={clsx(className, hasBorder && "border border-gray-200", variantTheme[variant])}
       onClick={onClick}
+      aria-label={ariaLabelledby}
+      aria-labelledby={ariaLabelledby}
     >
       {label}
     </button>

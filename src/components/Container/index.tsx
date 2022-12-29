@@ -1,5 +1,5 @@
-import React from 'react'
-import Nav from '#/src/components/Container/Nav'
+import React from "react";
+import Nav from "#/src/components/Container/Nav";
 
 const Container = ({children}: {children: React.ReactNode}) => {
   return (
@@ -14,7 +14,7 @@ const Container = ({children}: {children: React.ReactNode}) => {
         </main>
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default Container
+export default Container;

@@ -2,18 +2,21 @@ import React from "react";
 import dynamic from "next/dynamic";
 import {Inter} from "@next/font/google";
 import clsx from "clsx";
+import RootProvider from "#/src/components/provider/RootProvider";
 
 import Container from "#/src/components/Container";
-import ThemeProvider from "#/src/components/provider/ThemeProvider";
-import AnalyticsProvider from "#/src/components/provider/AnalyticsProvider";
 
 const Contact = dynamic(() => import("#/src/components/Contact"), {ssr: false});
 
-import "#/styles/globals.css";
+import "styles/globals.css";
 
 const interVariable = Inter();
 
-export default function RootLayout({children}: {children: React.ReactNode}) {
+type RootLayoutTypes = {
+  children: React.ReactNode;
+};
+
+const RootLayout: React.FC<RootLayoutTypes> = props => {
   return (
     <html lang="en" className="[color-scheme:dark]">
       <head />
@@ -23,9 +26,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           "bg-white dark:bg-black text-white dark:text-black",
         )}
       >
-        <ThemeProvider>
+        <RootProvider>
           <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-900">
-            <Container>{children}</Container>
+            <Container>{props.children}</Container>
           </div>
 
           <div
@@ -36,9 +39,10 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
             aria-label="modal"
           />
           <Contact />
-        </ThemeProvider>
-        <AnalyticsProvider />
+        </RootProvider>
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

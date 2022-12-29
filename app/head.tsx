@@ -1,6 +1,6 @@
-import DefaultTags from '#/src/components/Tag/DefaultTags'
+import DefaultTags from "#/src/components/Tag/DefaultTags";
 
-export default function Head() {
+const Head = () => {
   return (
     <>
       <DefaultTags />
@@ -8,5 +8,7 @@ export default function Head() {
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <link rel="icon" href="/favicon.ico" />
     </>
-  )
-}
+  );
+};
+
+export default Head;

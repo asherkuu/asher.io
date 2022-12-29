@@ -1,4 +1,4 @@
-import {DOMAIN} from "#/public/constant/env";
+import {DOMAIN} from "public/constant/env";
 
 type SanityFetchTypes = {
   query: string;
