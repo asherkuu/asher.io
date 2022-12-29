@@ -1,12 +1,10 @@
 import Bio from "#/src/components/main/Bio";
-
 import {Project} from "#/src/sanity/types";
-import {getClient} from "#/src/sanity/sanity-server";
 import {indexQuery} from "#/src/sanity/queries/project";
+import {sanityFetch} from "#/src/util/fetch";
 
 export default async function Page() {
   const data = await getData();
-  console.log("🚀 ~ file: page.tsx:7 ~ Page ~ data", data);
 
   return (
     <div className="flex flex-col justify-center items-start max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pb-16">
@@ -26,5 +24,5 @@ export default async function Page() {
 }
 
 const getData = async (): Promise<Project[]> => {
-  return await getClient(false).fetch(indexQuery);
+  return await sanityFetch({query: indexQuery});
 };
