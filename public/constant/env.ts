@@ -8,3 +8,5 @@ export const SANITY_ENV = {
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
   version: process.env.NEXT_PUBLIC_SANITY_VERSION,
 };
+
+export const DOMAIN = process.env.NEXT_PUBLIC_DOMAIN;

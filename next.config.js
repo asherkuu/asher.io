@@ -50,7 +50,7 @@ const securityHeaders = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
+  reactStrictMode: false, // Recommended for the `pages` directory, default in `app`.
   swcMinify: true,
   experimental: {
     // Required:
@@ -65,6 +65,14 @@ const nextConfig = {
       {
         source: "/(.*)",
         headers: securityHeaders,
+      },
+    ];
+  },
+  async rewrites() {
+    return [
+      {
+        source: "/api/sanity",
+        destination: `https://${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}.api.sanity.io/v1/data/query/${process.env.NEXT_PUBLIC_SANITY_DATASET}`,
       },
     ];
   },

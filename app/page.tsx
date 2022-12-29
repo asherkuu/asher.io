@@ -5,13 +5,13 @@ import {sanityFetch} from "#/src/util/fetch";
 import Tddd from "#/src/Tddd";
 
 export default async function Page() {
-  const data = await getData();
+  // const data = await getData();
 
   return (
     <div className="flex flex-col justify-center items-start max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pb-16">
       {/* <Bio /> */}
       <Tddd />
-      {data?.map(post => (
+      {/* {data?.map(post => (
         <div key={post._id} className="text-xl font-medium text-gray-500">
           <p>{post.title}</p>
           <div>
@@ -20,11 +20,11 @@ export default async function Page() {
             ))}
           </div>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 }
 
-const getData = async (): Promise<Project[]> => {
-  return await sanityFetch({query: indexQuery});
-};
+// const getData = async (): Promise<Project[]> => {
+//   return await sanityFetch({query: indexQuery});
+// };
