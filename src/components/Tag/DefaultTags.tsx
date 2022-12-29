@@ -1,19 +1,19 @@
-import React from 'react'
-import {usePathname} from 'next/navigation'
+import React from "react";
+import {usePathname} from "next/navigation";
 
 type DefaultTagsTypes = {
-  customMeta?: object
-}
+  customMeta?: object;
+};
 
 const DefaultTags: React.FC<DefaultTagsTypes> = ({customMeta}) => {
-  const pathname = usePathname()
+  const pathname = usePathname();
   const meta = {
-    title: '김선규 – Developer, drawer.',
+    title: "김선규 – Developer, drawer.",
     description: `Front-end developer and JavaScript enthusiast.`,
-    image: 'https://ashpor.com/static/images/ashpor-banner.png',
-    type: 'website',
+    image: "https://ashpor.com/images/ashpor-banner.png",
+    type: "website",
     ...customMeta,
-  } as any
+  } as any;
 
   return (
     <>
@@ -34,7 +34,7 @@ const DefaultTags: React.FC<DefaultTagsTypes> = ({customMeta}) => {
       <meta name="twitter:image" content={meta.image} />
       {meta?.date && <meta property="article:published_time" content={meta?.date} />}
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link href="/static/favicons/site.webmanifest" rel="manifest" />
+      <link href="/favicon/site.webmanifest" rel="manifest" />
       <link href="/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
       <link href="/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
       <link href="/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
@@ -42,7 +42,7 @@ const DefaultTags: React.FC<DefaultTagsTypes> = ({customMeta}) => {
       <link color="#000000" href="/favicon/safari-pinned-tab.svg" rel="mask-icon" />
       <link href="/favicon/favicon.ico" rel="shortcut icon" />
     </>
-  )
-}
+  );
+};
 
-export default DefaultTags
+export default DefaultTags;
