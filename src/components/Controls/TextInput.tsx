@@ -1,17 +1,18 @@
-import clsx from "clsx";
 import React, {forwardRef} from "react";
+import clsx from "clsx";
 
-export type TextInputTypes = {
-  type: string;
+export type TextInputProps = {
+  type?: string;
   id: string;
   className?: string;
   placeholder?: string;
   ariaDescribedby?: string;
   required?: boolean;
   maxLength?: number;
+  isOveride?: boolean;
 };
 
-const TextInput = forwardRef<HTMLInputElement, TextInputTypes>(
+const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
   (
     {
       type = "text",
@@ -21,6 +22,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputTypes>(
       ariaDescribedby = "text-input",
       required = false,
       maxLength = undefined,
+      isOveride = false,
     },
     ref,
   ) => {
@@ -31,8 +33,9 @@ const TextInput = forwardRef<HTMLInputElement, TextInputTypes>(
         id={id}
         aria-describedby={ariaDescribedby}
         className={clsx(
+          !isOveride &&
+            "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500",
           className,
-          "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500",
         )}
         placeholder={placeholder}
         required={required}

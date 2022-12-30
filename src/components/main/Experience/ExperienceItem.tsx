@@ -1,13 +1,13 @@
 import Link from "next/link";
 import dayjs from "dayjs";
 import {Project} from "#/src/sanity/types";
-import SummaryList from "./Summary/SummaryList";
+import SummaryList from "#/src/components/main/Experience/Summary/SummaryList";
 
-type ExperienceItemTypes = {
+type ExperienceItemProps = {
   data: Project;
 };
 
-const ExperienceItem: React.FC<ExperienceItemTypes> = ({data}) => {
+const ExperienceItem: React.FC<ExperienceItemProps> = ({data}) => {
   const startedAt = dayjs(data?.workStartedAt).format("YYYY. MM.");
   const endedAt = dayjs(data?.workStartedAt).format("YYYY. MM.");
 

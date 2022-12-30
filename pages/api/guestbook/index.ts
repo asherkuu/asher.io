@@ -10,7 +10,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       },
     });
 
-    return res.json(
+    return res.send(
       entries.map((entry: any) => ({
         id: entry.id.toString(),
         body: entry.body,
@@ -36,7 +36,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       },
     });
 
-    return res.status(200).json({
+    return res.status(200).send({
       id: newEntry.id.toString(),
       body: newEntry.body,
       created_by: newEntry.created_by,

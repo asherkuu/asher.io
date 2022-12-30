@@ -1,14 +1,14 @@
 import React, {forwardRef} from "react";
 import clsx from "clsx";
-import TextInput, {TextInputTypes} from "#/src/components/Controls/TextInput";
+import TextInput, {TextInputProps} from "#/src/components/Controls/TextInput";
 
-type LabelInputTypes = {
+type LabelInputProps = {
   htmlFor?: string;
   label: string;
   labelClassName?: string;
-} & TextInputTypes;
+} & TextInputProps;
 
-const LabelInput = forwardRef<HTMLInputElement, LabelInputTypes>(
+const LabelInput = forwardRef<HTMLInputElement, LabelInputProps>(
   (
     {
       htmlFor = "text",

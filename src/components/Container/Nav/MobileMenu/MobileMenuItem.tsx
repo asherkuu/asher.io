@@ -1,14 +1,14 @@
 import React from "react";
 import Link from "next/link";
 
-type MobileMenuItemTypes = {
+type MobileMenuItemProps = {
   delay: string;
   href: string;
   text: string;
   onClick: () => void;
 };
 
-const MobileMenuItem: React.FC<MobileMenuItemTypes> = ({
+const MobileMenuItem: React.FC<MobileMenuItemProps> = ({
   delay = "0ms",
   text,
   href = "#",

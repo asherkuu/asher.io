@@ -1,11 +1,11 @@
 import React from "react";
 import {Summaries} from "#/src/sanity/types";
 
-type SummaryItemTypes = {
+type SummaryItemProps = {
   data: Summaries;
 };
 
-const SummaryItem: React.FC<SummaryItemTypes> = ({data}) => {
+const SummaryItem: React.FC<SummaryItemProps> = ({data}) => {
   return (
     <li className="relative mt-2">
       <div className="absolute left-[-18px] top-2 w-1.5 h-1.5 bg-black dark:bg-white rounded-full"></div>

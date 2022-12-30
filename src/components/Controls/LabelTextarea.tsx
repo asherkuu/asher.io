@@ -1,14 +1,14 @@
 import React, {forwardRef} from "react";
 import clsx from "clsx";
-import TextareaField, {TextareaFieldTypes} from "#/src/components/Controls/TextareaField";
+import TextareaField, {TextareaFieldProps} from "#/src/components/Controls/TextareaField";
 
-type LabelTextareaFieldTypes = {
+type LabelTextareaFieldProps = {
   htmlFor?: string;
   label: string;
   labelClassName?: string;
-} & TextareaFieldTypes;
+} & TextareaFieldProps;
 
-const LabelTextareaField = forwardRef<HTMLTextAreaElement, LabelTextareaFieldTypes>(
+const LabelTextareaField = forwardRef<HTMLTextAreaElement, LabelTextareaFieldProps>(
   (
     {
       htmlFor = "text",

@@ -1,10 +1,8 @@
-import {DOMAIN} from "public/constant/env";
-
-type SanityFetchTypes = {
+type SanityFetchProps = {
   query: string;
 };
 
-export const sanityFetch = async ({query}: SanityFetchTypes) => {
+export const sanityFetch = async ({query}: SanityFetchProps) => {
   const encodedQuery = encodeURIComponent(query);
   const url = `/api/sanity?query=${encodedQuery}`;
   const {result} = await fetch(url).then(res => res.json());

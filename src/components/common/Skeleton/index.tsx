@@ -1,14 +1,14 @@
 import React from "react";
 import clsx from "clsx";
 
-type SkeletonTypes = {
+type SkeletonProps = {
   className?: string;
   w?: number;
   h?: number;
   mb?: number;
 };
 
-const Skeleton: React.FC<SkeletonTypes> = ({className, w, h, mb}) => {
+const Skeleton: React.FC<SkeletonProps> = ({className, w, h, mb}) => {
   return (
     <div
       className={clsx(

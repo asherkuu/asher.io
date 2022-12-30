@@ -1,11 +1,11 @@
 import React from "react";
 import {usePathname} from "next/navigation";
 
-type DefaultTagsTypes = {
+type DefaultTagsProps = {
   customMeta?: object;
 };
 
-const DefaultTags: React.FC<DefaultTagsTypes> = ({customMeta}) => {
+const DefaultTags: React.FC<DefaultTagsProps> = ({customMeta}) => {
   const pathname = usePathname();
   const meta = {
     title: "김선규 – Developer, drawer.",

@@ -1,7 +1,7 @@
-import clsx from 'clsx';
-import React, {forwardRef} from 'react';
+import React, {forwardRef} from "react";
+import clsx from "clsx";
 
-export type TextareaFieldTypes = {
+export type TextareaFieldProps = {
   id: string;
   className?: string;
   placeholder?: string;
@@ -10,17 +10,17 @@ export type TextareaFieldTypes = {
   rows?: number;
 };
 
-const TextareaField = forwardRef<HTMLTextAreaElement, TextareaFieldTypes>(
+const TextareaField = forwardRef<HTMLTextAreaElement, TextareaFieldProps>(
   (
     {
-      id = 'input',
+      id = "input",
       className = undefined,
       placeholder = undefined,
-      ariaDescribedby = 'text-input',
+      ariaDescribedby = "text-input",
       required = false,
       rows = 4,
     },
-    ref
+    ref,
   ) => {
     return (
       <textarea
@@ -29,15 +29,15 @@ const TextareaField = forwardRef<HTMLTextAreaElement, TextareaFieldTypes>(
         aria-describedby={ariaDescribedby}
         className={clsx(
           className,
-          'block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+          "block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500",
         )}
         placeholder={placeholder}
         required={required}
         rows={rows}
       />
     );
-  }
+  },
 );
 
-TextareaField.displayName = 'TextareaField';
+TextareaField.displayName = "TextareaField";
 export default TextareaField;

@@ -1,8 +1,12 @@
 "use client";
 
-import ExperienceItem from "#/src/components/main/Experience/ExperienceItem";
+import dynamic from "next/dynamic";
 import ExperienceSkeleton from "#/src/components/main/Experience/ExperienceSkeleton";
 import useProjectApi from "#/src/hooks/query/useProjectQuery";
+
+const ExperienceItem = dynamic(() => import("#/src/components/main/Experience/ExperienceItem"), {
+  ssr: false,
+});
 
 const ExperienceList: React.FC = () => {
   const {isLoading, error, data} = useProjectApi();

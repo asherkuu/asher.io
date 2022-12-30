@@ -1,12 +1,12 @@
 import {Summaries} from "#/src/sanity/types";
 import React from "react";
-import SummaryItem from "./SummaryItem";
+import SummaryItem from "#/src/components/main/Experience/Summary/SummaryItem";
 
-type SummaryListTypes = {
+type SummaryListProps = {
   data: Summaries[];
 };
 
-const SummaryList: React.FC<SummaryListTypes> = ({data}) => {
+const SummaryList: React.FC<SummaryListProps> = ({data}) => {
   return (
     <ul className="ml-8">
       {data?.map(summary => (

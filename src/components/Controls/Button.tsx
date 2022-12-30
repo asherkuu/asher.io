@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import React from "react";
 
-type ButtonTypes = {
+type ButtonProps = {
   type?: "button" | "submit" | "reset" | undefined;
   className?: string;
   variant?: "primary" | "default";
@@ -18,7 +18,7 @@ const variantTheme = {
     "text-gray-900 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700",
 };
 
-const Button: React.FC<ButtonTypes> = ({
+const Button: React.FC<ButtonProps> = ({
   type = "button",
   className = undefined,
   variant = "default",

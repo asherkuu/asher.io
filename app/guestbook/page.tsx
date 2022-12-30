@@ -28,9 +28,6 @@ const Page = async () => {
 export default Page;
 
 const getData = async (): Promise<{fallbackData: GuestbookTypes[]; revalidate: number}> => {
-  const session = await unstable_getServerSession(authOptions);
-  console.log("🚀 ~ file: page.tsx:33 ~ getData ~ session", session);
-
   const entries = await prisma.guestbook.findMany({
     orderBy: {
       updated_at: "desc",

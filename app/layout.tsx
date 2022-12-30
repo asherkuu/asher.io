@@ -14,11 +14,11 @@ import "styles/globals.css";
 
 const interVariable = Inter();
 
-type RootLayoutTypes = {
+type RootLayoutProps = {
   children: React.ReactNode;
 };
 
-const RootLayout: React.FC<RootLayoutTypes> = props => {
+const RootLayout: React.FC<RootLayoutProps> = props => {
   return (
     <html lang="en" className="[color-scheme:dark]">
       <head />
