@@ -10,3 +10,10 @@ export const SANITY_ENV = {
 };
 
 export const DOMAIN = process.env.NEXT_PUBLIC_DOMAIN;
+
+export const NEXT_AUTH_SECRET = process.env.NEXT_PUBLIC_AUTH_SECRET;
+
+export const GITHUB_AUTH = {
+  clientId: process.env.OAUTH_CLIENT_KEY as string,
+  clientSecret: process.env.OAUTH_CLIENT_SECRET as string,
+};

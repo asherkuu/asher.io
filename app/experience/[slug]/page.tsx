@@ -1,4 +1,4 @@
-import {type PageProps} from "#/src/type";
+import {type PageProps} from "#/src/types";
 
 const Page = async ({params}: PageProps) => {
   const slug = params.slug;
