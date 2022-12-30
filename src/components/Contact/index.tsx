@@ -102,7 +102,7 @@ const Contact = () => {
                 <h5 className="text-xl font-medium text-gray-900 dark:text-white">Contact Me</h5>
                 <div className="absolute right-[-10px] top-[6px] pointer-events-none">
                   <Image
-                    src="/images/Brazuca-Sitting.webp"
+                    src="/static/images/Brazuca-Sitting.webp"
                     alt="Brazuca-Sitting"
                     width={100}
                     height={100}

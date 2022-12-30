@@ -27,7 +27,7 @@ const Bio: React.FC = () => {
           alt="김선규"
           height={140}
           width={140}
-          src="/images/asher.png"
+          src="/static/images/asher.png"
           sizes="30vw"
           priority
           className="rounded-full filter border-gray-200 border-2"

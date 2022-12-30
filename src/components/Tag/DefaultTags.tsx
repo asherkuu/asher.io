@@ -10,7 +10,7 @@ const DefaultTags: React.FC<DefaultTagsProps> = ({customMeta}) => {
   const meta = {
     title: "김선규 – Developer, drawer.",
     description: `Front-end developer and JavaScript enthusiast.`,
-    image: "https://ashpor.com/images/asher-banner.png",
+    image: "https://ashpor.com/static/images/asher-banner.png",
     type: "website",
     ...customMeta,
   } as any;
