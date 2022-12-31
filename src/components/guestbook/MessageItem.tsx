@@ -1,4 +1,5 @@
 import dayjs from "dayjs";
+import Button from "../Controls/Button";
 
 type MessageItemProps = {
   item: any;
@@ -9,7 +10,9 @@ const MessageItem: React.FC<MessageItemProps> = ({item, user}) => {
   const isMine = user && item.created_by === user.name;
   const updatedAt = dayjs(new Date(item.updated_at)).format("d MMM YYYY h:mm A");
 
-  const handleClickDelete = async () => {};
+  const handleClickDelete = async (e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault();
+  };
 
   return (
     <div className="flex flex-col space-y-2">
@@ -21,9 +24,12 @@ const MessageItem: React.FC<MessageItemProps> = ({item, user}) => {
         {isMine && (
           <>
             <span className="text-gray-200 dark:text-gray-800">/</span>
-            <button className="text-sm text-red-600 dark:text-red-400" onClick={handleClickDelete}>
-              Delete
-            </button>
+            <Button
+              className="text-sm text-red-600 dark:text-red-400 bg-gray-50 dark:!bg-gray-900 hover:bg-peri-100"
+              onClick={handleClickDelete}
+              label="Delete"
+              variant="default"
+            />
           </>
         )}
       </div>

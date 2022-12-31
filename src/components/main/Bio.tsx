@@ -30,7 +30,7 @@ const Bio: React.FC = () => {
           src="/static/images/asher.png"
           sizes="30vw"
           priority
-          className="rounded-full filter border-gray-200 border-2"
+          className="rounded-full filter border-peri-0 border-2"
         />
       </div>
     </article>

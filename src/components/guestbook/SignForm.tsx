@@ -29,7 +29,7 @@ const SignForm: React.FC<SignFormProps> = ({
   onSubmitLeaveEntry,
 }) => {
   return (
-    <div className="border border-blue-200 rounded p-6 my-4 w-full dark:border-gray-800 bg-blue-50 dark:bg-blue-opaque">
+    <div className="rounded-2xl p-6 mb-8 w-full border border-peri-700 dark:border-peri-200 bg-peri-200 dark:bg-peri-50 shadow-lg">
       <h5 className="text-lg md:text-xl font-bold text-gray-900 dark:text-gray-100">
         Sign the Guestbook
       </h5>

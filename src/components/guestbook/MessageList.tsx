@@ -15,9 +15,15 @@ const MessageList: React.FC<MessageListProps> = ({data, isLoading}) => {
   const {data: session} = useSession();
 
   return (
-    <div>
+    <article className="w-full">
       {isLoading ? (
-        <MessageSkeleton />
+        <div className="mt-4 space-y-8">
+          <MessageSkeleton />
+          <MessageSkeleton />
+          <MessageSkeleton />
+          <MessageSkeleton />
+          <MessageSkeleton />
+        </div>
       ) : (
         <div className="mt-4 space-y-8">
           {data?.pages?.map(page =>
@@ -27,7 +33,7 @@ const MessageList: React.FC<MessageListProps> = ({data, isLoading}) => {
           )}
         </div>
       )}
-    </div>
+    </article>
   );
 };
 
