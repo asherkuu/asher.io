@@ -6,6 +6,8 @@ const projectFields = `
   workedAt,
   workStartedAt,
   workEndedAt,
+  position,
+  belong,
   isPublished,
   publishedAt,
   body,

@@ -8,7 +8,7 @@ type SummaryListProps = {
 
 const SummaryList: React.FC<SummaryListProps> = ({data}) => {
   return (
-    <ul className="ml-8">
+    <ul className="ml-4">
       {data?.map(summary => (
         <SummaryItem key={summary._id} data={summary} />
       ))}
