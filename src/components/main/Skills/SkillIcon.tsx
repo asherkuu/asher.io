@@ -1,6 +1,11 @@
 import React from "react";
 
-const SkillIcon = ({icon, text}) => {
+type SkillIconProps = {
+  icon: React.ReactNode;
+  text: string;
+};
+
+const SkillIcon: React.FC<SkillIconProps> = ({icon, text}) => {
   return (
     <div className="flex items-center justify-center gap-2 p-2">
       {icon}
