@@ -5,7 +5,7 @@ import ExperienceList from "#/src/components/main/Experience/ExperienceList";
 const Experience: React.FC = () => {
   return (
     <article className="flex flex-col w-full">
-      <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white">
+      <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-2 text-black dark:text-white ">
         Work Experience
       </h3>
 
