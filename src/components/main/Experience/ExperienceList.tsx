@@ -9,7 +9,7 @@ const ExperienceItem = dynamic(() => import("#/src/components/main/Experience/Ex
 });
 
 const ExperienceList: React.FC = () => {
-  const {isLoading, error, data} = useProjectApi();
+  const {isLoading, data} = useProjectApi();
 
   return (
     <div className="flex flex-col gap-4">

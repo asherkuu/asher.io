@@ -4,12 +4,10 @@ import React from "react";
 import dynamic from "next/dynamic";
 import {Inter} from "@next/font/google";
 import clsx from "clsx";
+
 import RootProvider from "#/src/components/provider/RootProvider";
-
 import Container from "#/src/components/Container";
-
 const Contact = dynamic(() => import("#/src/components/Contact"), {ssr: false});
-
 import "styles/globals.css";
 
 const interVariable = Inter();

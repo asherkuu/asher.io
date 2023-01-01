@@ -3,11 +3,11 @@
 import React, {useState, useEffect} from "react";
 import clsx from "clsx";
 import useDelayedRender from "use-delayed-render";
-
-import styles from "styles/mobile-menu.module.css";
-import MobileMenuItem from "./MobileMenuItem";
+import MobileMenuItem from "#/src/components/Container/Nav/MobileMenu/MobileMenuItem";
 import IconMenu from "#/src/components/Icons/IconMenu";
 import IconCross from "#/src/components/Icons/IconCross";
+
+import styles from "styles/mobile-menu.module.css";
 
 const MobileMenu: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -53,17 +53,18 @@ const MobileMenu: React.FC = () => {
         >
           <MobileMenuItem href="/" text="Home" delay="150ms" onClick={handleClickToggleMenu} />
           <MobileMenuItem
-            href="/experience"
-            text="Experience"
+            href="/guestbook"
+            text="Guestbook"
             delay="175ms"
             onClick={handleClickToggleMenu}
           />
           <MobileMenuItem
-            href="/guestbook"
-            text="Guestbook"
+            href="/experience"
+            text="Experience"
             delay="200ms"
             onClick={handleClickToggleMenu}
           />
+
           {/* <MobileMenuItem delay="175ms" text="Guest Book" href="/guestbook" />
           <MobileMenuItem delay="200ms" text="Dashboard" href="/dashboard" />
           <MobileMenuItem delay="250ms" text="Blog" href="/blog" />

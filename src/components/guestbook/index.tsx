@@ -1,9 +1,11 @@
 "use client";
 
-import React, {useRef, useState} from "react";
+import React, {useLayoutEffect, useRef, useState} from "react";
 import dynamic from "next/dynamic";
 import {useSession} from "next-auth/react";
+import {useInView} from "react-intersection-observer";
 import SignForm from "#/src/components/guestbook/SignForm";
+import LoadingSpinner from "#/src/components/common/LoadingSpinner";
 import {useGuestbookMutation, useGuestbookQuery} from "#/src/hooks/query/useGuestbookQuery";
 import {Form, FormState, GuestbookTypes} from "#/src/types";
 
@@ -15,10 +17,17 @@ type GuestbookProps = {
 
 const Guestbook: React.FC<GuestbookProps> = ({fallbackData}) => {
   const {data: session, status: sessionStatus} = useSession();
-  const inputEl = useRef<HTMLInputElement>(null);
-  const [form, setForm] = useState<FormState>({state: Form.Initial});
-  const {isLoading, data} = useGuestbookQuery();
   const mutation = useGuestbookMutation();
+  const {isLoading, data, fetchNextPage, hasNextPage, isFetchingNextPage} = useGuestbookQuery();
+  const inputEl = useRef<HTMLInputElement>(null);
+  const [ref, isView] = useInView();
+  const [form, setForm] = useState<FormState>({state: Form.Initial});
+
+  useLayoutEffect(() => {
+    if (isView && hasNextPage) {
+      fetchNextPage();
+    }
+  }, [isView, hasNextPage, fetchNextPage]);
 
   const handleSubmitLeaveEntry = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -36,6 +45,7 @@ const Guestbook: React.FC<GuestbookProps> = ({fallbackData}) => {
           });
         },
         onSuccess: () => {
+          inputEl.current!.value = "";
           setForm({
             state: Form.Success,
             message: `Hooray! Thanks for signing my Guestbook.`,
@@ -67,6 +77,14 @@ const Guestbook: React.FC<GuestbookProps> = ({fallbackData}) => {
       </div>
 
       <MessageList data={data} isLoading={isLoading} />
+
+      {isFetchingNextPage && (
+        <div className="flex justify-center w-full my-8">
+          <LoadingSpinner />
+        </div>
+      )}
+
+      {hasNextPage && <div ref={ref} />}
     </article>
   );
 };

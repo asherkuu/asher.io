@@ -21,3 +21,8 @@ export type FormState = {
   state: Form;
   message?: string;
 };
+
+export type InfinityResponseType<DataType> = {
+  body: DataType;
+  page: Number;
+};

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 import IconArrow from "#/src/components/Icons/IconArrow";
 import ExperienceList from "#/src/components/main/Experience/ExperienceList";
 
