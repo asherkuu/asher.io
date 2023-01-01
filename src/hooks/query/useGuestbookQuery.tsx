@@ -1,4 +1,4 @@
-import {InfiniteData, useInfiniteQuery, useMutation} from "@tanstack/react-query";
+import {InfiniteData, useInfiniteQuery, useMutation, useQuery} from "@tanstack/react-query";
 import {GuestbookTypes, InfinityResponseType} from "#/src/types";
 import {queryClient} from "#/src/query/queryClient";
 import {useLastIdStore} from "#/src/store/gusetbook";

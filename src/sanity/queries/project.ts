@@ -10,7 +10,6 @@ const projectFields = `
   belong,
   isPublished,
   publishedAt,
-  body,
   "mainImage":mainImage.asset,
   "slug": slug.current,
   "summaries": summaries[]->
@@ -25,7 +24,7 @@ export const indexQuery = `
 export const projectQuery = `
 {
   "project": *[_type == "project" && slug.current == $slug  && isPublished == true] | order(_updatedAt desc) [0] {
-    body,
+    content,
     ${projectFields}
   }
 }`;
@@ -34,8 +33,8 @@ export const projectSlugsQuery = `
 *[_type == "project" && defined(slug.current)][].slug.current
 `;
 
-export const projectBySlugQuery = `
-*[_type == "project" && slug.current == $slug][0] {
+export const projectBySlugQuery = (slug: string) => `
+*[_type == "project" && slug.current == "${slug}"][0] {
   ${projectFields}
 }
 `;

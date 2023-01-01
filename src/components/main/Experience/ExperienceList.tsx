@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import ExperienceSkeleton from "#/src/components/main/Experience/ExperienceSkeleton";
-import useProjectApi from "#/src/hooks/query/useProjectQuery";
+import {useProjectApi} from "#/src/hooks/query/useProjectQuery";
 
 const ExperienceItem = dynamic(() => import("#/src/components/main/Experience/ExperienceItem"), {
   ssr: false,
