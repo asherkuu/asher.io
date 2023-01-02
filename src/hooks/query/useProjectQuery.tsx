@@ -4,9 +4,9 @@ import {sanityFetch} from "#/src/util/fetch";
 import {Project} from "#/src/types";
 import {mdxToHtml} from "#/lib/mdx";
 
-export const useProjectQuery = (isMain: boolean = true) => {
+export const useProjectQuery = () => {
   const {isLoading, error, data} = useQuery<Project[]>({
-    queryKey: ["project", isMain],
+    queryKey: ["project"],
     queryFn: async () => await sanityFetch({query: indexQuery}),
   });
 

@@ -8,7 +8,7 @@ const ExperienceList = dynamic(() => import("#/src/components/experience/Experie
 });
 
 const Experience = () => {
-  const {isLoading, data} = useProjectQuery(false);
+  const {isLoading, data} = useProjectQuery();
 
   if (isLoading || !data) {
     return <ExperienceSkeletion />;
