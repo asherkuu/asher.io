@@ -23,8 +23,9 @@ export const indexQuery = `
 
 export const projectQuery = `
 {
-  "project": *[_type == "project" && slug.current == $slug  && isPublished == true] | order(_updatedAt desc) [0] {
+  "project": *[_type == "project" && slug.current == $slug] | order(_updatedAt desc) [0] {
     content,
+    mainImage,
     ${projectFields}
   }
 }`;
@@ -35,6 +36,7 @@ export const projectSlugsQuery = `
 
 export const projectBySlugQuery = (slug: string) => `
 *[_type == "project" && slug.current == "${slug}"][0] {
+  content,
   ${projectFields}
 }
 `;

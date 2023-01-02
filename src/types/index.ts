@@ -1,3 +1,5 @@
+import {MDXRemoteSerializeResult} from "next-mdx-remote";
+
 export type PageProps = {
   params?: any;
   children?: React.ReactNode;
@@ -26,3 +28,5 @@ export type InfinityResponseType<DataType> = {
   body: DataType;
   page: Number;
 };
+
+export type MDXHtml = MDXRemoteSerializeResult<Record<string, unknown>, Record<string, string>>;

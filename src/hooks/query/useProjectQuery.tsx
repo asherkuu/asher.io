@@ -3,6 +3,8 @@ import {indexQuery, projectBySlugQuery} from "#/src/sanity/queries/project";
 import {sanityFetch} from "#/src/util/fetch";
 import {Project} from "#/src/sanity/types";
 import {mdxToHtml} from "#/lib/mdx";
+import {MDXRemoteSerializeResult} from "next-mdx-remote";
+import {MDXHtml} from "#/src/types";
 
 export const useProjectApi = () => {
   const {isLoading, error, data} = useQuery<Project[]>({
@@ -13,19 +15,17 @@ export const useProjectApi = () => {
   return {isLoading, error, data};
 };
 
-export const useProjectBySlugApi = async (slug: string) => {
-  const {data, isLoading} = useQuery({
+export const useProjectBySlugApi = (slug: string) => {
+  const {isLoading, error, data} = useQuery<Project & {html: MDXHtml; readingTime: string}>({
     queryKey: ["project", slug],
-    queryFn: async () => await sanityFetch({query: projectBySlugQuery(slug)}),
-    onSuccess: async data => {
-      console.log("🚀 ~ file: useProjectQuery.tsx:26 ~ useProjectBySlugApi ~ data", data);
-      const {html, tweetIDs, readingTime} = await mdxToHtml(data?.body);
-      console.log(html);
-      return {html, tweetIDs, readingTime};
+    queryFn: async () => {
+      const response = await sanityFetch({query: projectBySlugQuery(slug)});
+      const {html, readingTime} = await mdxToHtml(response?.content);
+      response.html = html;
+      response.readingTime = readingTime;
+      return response;
     },
   });
-  // console.log(data);
-  // const {html, tweetIDs, readingTime} = await mdxToHtml(data?.body);
-  // console.log(html);
-  return {data, isLoading}; //, html, tweetIDs, readingTime};
+
+  return {isLoading, error, data};
 };

@@ -7,18 +7,19 @@ import {useProjectBySlugApi} from "#/src/hooks/query/useProjectQuery";
 
 type GusetbookDetailProps = {
   slug: string;
-  html: any;
 };
 
-const GusetbookDetail: React.FC<GusetbookDetailProps> = ({slug, html}) => {
-  console.log("🚀 ~ file: index.tsx:14 ~ html", html);
-  //   const {html, isError} = useProjectBySlugApi(slug);
-  //   console.log("🚀 ~ file: index.tsx:14 ~ html", html);
+const GusetbookDetail: React.FC<GusetbookDetailProps> = ({slug}) => {
+  const {data, isLoading} = useProjectBySlugApi(slug);
+
+  if (isLoading) {
+    return <div>loading...</div>;
+  }
 
   return (
     <div className="text-black">
       <MDXRemote
-        {...html}
+        compiledSource={data?.html?.compiledSource as string}
         components={
           {
             ...MDXComponents,

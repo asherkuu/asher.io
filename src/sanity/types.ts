@@ -14,7 +14,7 @@ export type Summaries = {
 export type Project = {
   _id: string;
   slug: string;
-  body: MDXRemoteSerializeResult;
+  content: MDXRemoteSerializeResult;
   title: string;
   description: string;
   belong: string;
@@ -26,6 +26,18 @@ export type Project = {
   publishedAt: string;
   summaries: Summaries[];
   projectType: ProjectType;
+};
+
+export type Post = {
+  _id: string;
+  slug: string;
+  content: MDXRemoteSerializeResult;
+  title: string;
+  date: string;
+  excerpt: string;
+  coverImage: string;
+  readingTime: string;
+  tweets: any[];
 };
 
 export type Snippet = {
