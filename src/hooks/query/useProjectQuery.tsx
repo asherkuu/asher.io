@@ -1,22 +1,20 @@
 import {useQuery} from "@tanstack/react-query";
 import {indexQuery, projectBySlugQuery} from "#/src/sanity/queries/project";
 import {sanityFetch} from "#/src/util/fetch";
-import {Project} from "#/src/sanity/types";
+import {Project} from "#/src/types";
 import {mdxToHtml} from "#/lib/mdx";
-import {MDXRemoteSerializeResult} from "next-mdx-remote";
-import {MDXHtml} from "#/src/types";
 
-export const useProjectApi = () => {
+export const useProjectQuery = (isMain: boolean = true) => {
   const {isLoading, error, data} = useQuery<Project[]>({
-    queryKey: ["project"],
+    queryKey: ["project", isMain],
     queryFn: async () => await sanityFetch({query: indexQuery}),
   });
 
   return {isLoading, error, data};
 };
 
-export const useProjectBySlugApi = (slug: string) => {
-  const {isLoading, error, data} = useQuery<Project & {html: MDXHtml; readingTime: string}>({
+export const useProjectBySlugQuery = (slug: string) => {
+  const {isLoading, error, data} = useQuery<Project>({
     queryKey: ["project", slug],
     queryFn: async () => {
       const response = await sanityFetch({query: projectBySlugQuery(slug)});

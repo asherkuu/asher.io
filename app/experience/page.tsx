@@ -1,7 +1,7 @@
-import React from "react";
+import Experience from "#/src/components/experience";
 
 const Page = async () => {
-  return <p>Experience</p>;
+  return <Experience />;
 };
 
 export default Page;

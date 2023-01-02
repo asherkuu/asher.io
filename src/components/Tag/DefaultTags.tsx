@@ -8,7 +8,6 @@ type DefaultTagsProps = {
 
 const DefaultTags: React.FC<DefaultTagsProps> = ({customMeta}) => {
   const pathname = usePathname();
-  console.log("🚀 ~ file: DefaultTags.tsx:10 ~ pathname", pathname);
   const meta = {
     title: "김선규 – FE Developer, drawer.",
     description: `Front-end developer and JavaScript enthusiast with React, NextJS.`,

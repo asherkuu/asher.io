@@ -1,5 +1,5 @@
 import React from "react";
-import {Summaries} from "#/src/sanity/types";
+import {Summaries} from "#/src/types";
 
 type SummaryItemProps = {
   data: Summaries;

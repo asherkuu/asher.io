@@ -1,7 +1,7 @@
 import Link from "next/link";
 import dayjs from "dayjs";
-import {Project} from "#/src/sanity/types";
 import SummaryList from "#/src/components/main/Experience/Summary/SummaryList";
+import {Project} from "#/src/types";
 
 type ExperienceItemProps = {
   data: Project;

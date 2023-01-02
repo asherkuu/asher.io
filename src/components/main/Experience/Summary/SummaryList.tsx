@@ -1,4 +1,4 @@
-import {Summaries} from "#/src/sanity/types";
+import {Summaries} from "#/src/types";
 import React from "react";
 import SummaryItem from "#/src/components/main/Experience/Summary/SummaryItem";
 

@@ -2,14 +2,14 @@
 
 import dynamic from "next/dynamic";
 import ExperienceSkeleton from "#/src/components/main/Experience/ExperienceSkeleton";
-import {useProjectApi} from "#/src/hooks/query/useProjectQuery";
+import {useProjectQuery} from "#/src/hooks/query/useProjectQuery";
 
 const ExperienceItem = dynamic(() => import("#/src/components/main/Experience/ExperienceItem"), {
   ssr: false,
 });
 
 const ExperienceList: React.FC = () => {
-  const {isLoading, data} = useProjectApi();
+  const {isLoading, data} = useProjectQuery();
 
   return (
     <div className="flex flex-col gap-4">

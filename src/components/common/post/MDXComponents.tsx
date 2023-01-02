@@ -1,11 +1,20 @@
-import ProsCard from "#/src/components/common/post/ProsCard";
-import ConsCard from "#/src/components/common/post/ConsCard";
-import CustomLink from "#/src/components/common/post/CustomLink";
-import RoundedImage from "#/src/components/common/post/RoundedImage";
-import Callout from "#/src/components/common/post/Callout";
-import Analytics from "#/src/components/common/post/metrics/Analytics";
-import Step from "#/src/components/common/post/Step";
-import ImageWithTheme from "#/src/components/common/post/ImageWithTheme";
+import dynamic from "next/dynamic";
+
+const ProsCard = dynamic(() => import("#/src/components/common/post/ProsCard"), {ssr: false});
+const ConsCard = dynamic(() => import("#/src/components/common/post/ConsCard"), {ssr: false});
+const CustomLink = dynamic(() => import("#/src/components/common/post/CustomLink"), {ssr: false});
+const RoundedImage = dynamic(() => import("#/src/components/common/post/RoundedImage"), {
+  ssr: false,
+});
+const Callout = dynamic(() => import("#/src/components/common/post/Callout"), {ssr: false});
+const Analytics = dynamic(() => import("#/src/components/common/post/metrics/Analytics"), {
+  ssr: false,
+});
+const Step = dynamic(() => import("#/src/components/common/post/Step"), {ssr: false});
+const ImageWithTheme = dynamic(() => import("#/src/components/common/post/ImageWithTheme"), {
+  ssr: false,
+});
+
 // import Unsplash from 'components/metrics/Unsplash';
 // import YouTube from 'components/metrics/Youtube';
 
