@@ -1,7 +1,6 @@
 import React from "react";
-import dynamic from "next/dynamic";
 import Bio from "#/src/components/main/Bio";
-const Skills = dynamic(() => import("#/src/components/main/Skills"), {ssr: false});
+import Skills from "#/src/components/main/Skills";
 import Summary from "#/src/components/main/Experience";
 
 const Main: React.FC = () => {

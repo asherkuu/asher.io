@@ -1,9 +1,7 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import IconArrow from "#/src/components/Icons/IconArrow";
-const ExperienceList = dynamic(() => import("#/src/components/main/Experience/ExperienceList"), {
-  ssr: false,
-});
+import ExperienceList from "#/src/components/main/Experience/ExperienceList";
 
 const Experience: React.FC = () => {
   return (
