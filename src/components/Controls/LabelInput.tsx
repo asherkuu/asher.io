@@ -3,7 +3,6 @@ import clsx from "clsx";
 import TextInput, {TextInputProps} from "#/src/components/Controls/TextInput";
 
 type LabelInputProps = {
-  htmlFor?: string;
   label: string;
   labelClassName?: string;
 } & TextInputProps;
@@ -11,7 +10,6 @@ type LabelInputProps = {
 const LabelInput = forwardRef<HTMLInputElement, LabelInputProps>(
   (
     {
-      htmlFor = "text",
       label = "label",
       labelClassName = undefined,
       type = "text",
@@ -27,7 +25,7 @@ const LabelInput = forwardRef<HTMLInputElement, LabelInputProps>(
     return (
       <>
         <label
-          htmlFor={htmlFor}
+          htmlFor={id}
           className={clsx(
             labelClassName,
             "block mb-2 text-sm font-medium text-gray-900 dark:text-white",

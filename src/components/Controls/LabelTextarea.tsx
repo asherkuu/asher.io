@@ -11,7 +11,6 @@ type LabelTextareaFieldProps = {
 const LabelTextareaField = forwardRef<HTMLTextAreaElement, LabelTextareaFieldProps>(
   (
     {
-      htmlFor = "text",
       label = "label",
       labelClassName = undefined,
       id = "input",
@@ -26,7 +25,7 @@ const LabelTextareaField = forwardRef<HTMLTextAreaElement, LabelTextareaFieldPro
     return (
       <>
         <label
-          htmlFor={htmlFor}
+          htmlFor={id}
           className={clsx(
             labelClassName,
             "block mb-2 text-sm font-medium text-gray-900 dark:text-white",
