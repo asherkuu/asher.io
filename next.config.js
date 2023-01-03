@@ -56,6 +56,7 @@ const nextConfig = {
     // Required:
     appDir: true,
     fontLoaders: [{loader: "@next/font/google", options: {subsets: ["Inter"]}}],
+    scrollRestoration: true,
   },
   images: {
     domains: ["cdn.sanity.io"],
