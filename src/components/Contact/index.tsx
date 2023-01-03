@@ -20,7 +20,7 @@ const intialInformation = {
   content: HTMLTextAreaElement | null;
 };
 
-const OPEN_TIMER = 1000;
+const OPEN_TIMER = 6000;
 const ENTER_DELAY = 20;
 const EXIT_DELAY = 300;
 
@@ -33,15 +33,15 @@ const Contact = () => {
     exitDelay: EXIT_DELAY,
   });
 
-  // useLayoutEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setIsOpen(prev => !prev);
-  //   }, OPEN_TIMER);
+  useLayoutEffect(() => {
+    const timer = setTimeout(() => {
+      setIsOpen(prev => !prev);
+    }, OPEN_TIMER);
 
-  //   return () => {
-  //     clearTimeout(timer);
-  //   };
-  // }, []);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
 
   const sendMessage = (e: React.FormEvent<HTMLFormElement>) => {
     const token = TELEGRAM_ENV.token;
