@@ -1,85 +1,23 @@
-import dynamic from "next/dynamic";
-import SkillIconLoader from "#/src/components/main/Skills/SkillIconLoader";
-const IconAws = dynamic(() => import("#/src/components/Icons/logo/IconAws"), {
-  ssr: false,
-  loading: () => <SkillIconLoader />,
-});
-const IconCss = dynamic(() => import("#/src/components/Icons/logo/IconCss"), {
-  ssr: false,
-  loading: () => <SkillIconLoader />,
-});
-const IconHtml = dynamic(() => import("#/src/components/Icons/logo/IconHtml"), {
-  ssr: false,
-  loading: () => <SkillIconLoader />,
-});
-const IconJava = dynamic(() => import("#/src/components/Icons/logo/IconJava"), {
-  ssr: false,
-  loading: () => <SkillIconLoader />,
-});
-const IconJavascript = dynamic(() => import("#/src/components/Icons/logo/IconJavascript"), {
-  ssr: false,
-  loading: () => <SkillIconLoader />,
-});
-const IconJquery = dynamic(() => import("#/src/components/Icons/logo/IconJquery"), {
-  ssr: false,
-  loading: () => <SkillIconLoader />,
-});
-const IconMobx = dynamic(() => import("#/src/components/Icons/logo/IconMobx"), {
-  ssr: false,
-  loading: () => <SkillIconLoader />,
-});
-const IconMongo = dynamic(() => import("#/src/components/Icons/logo/IconMongo"), {
-  ssr: false,
-  loading: () => <SkillIconLoader />,
-});
-const IconMui = dynamic(() => import("#/src/components/Icons/logo/IconMui"), {
-  ssr: false,
-  loading: () => <SkillIconLoader />,
-});
-const IconMysql = dynamic(() => import("#/src/components/Icons/logo/IconMysql"), {
-  ssr: false,
-  loading: () => <SkillIconLoader />,
-});
-const IconNextjs = dynamic(() => import("#/src/components/Icons/logo/IconNextjs"), {
-  ssr: false,
-  loading: () => <SkillIconLoader />,
-});
-const IconNode = dynamic(() => import("#/src/components/Icons/logo/IconNode"), {
-  ssr: false,
-  loading: () => <SkillIconLoader />,
-});
-const IconReact = dynamic(() => import("#/src/components/Icons/logo/IconReact"), {
-  ssr: false,
-  loading: () => <SkillIconLoader />,
-});
-const IconReactQuery = dynamic(() => import("#/src/components/Icons/logo/IconReactQuery"), {
-  ssr: false,
-  loading: () => <SkillIconLoader />,
-});
-const IconRecoil = dynamic(() => import("#/src/components/Icons/logo/IconRecoil"), {
-  ssr: false,
-  loading: () => <SkillIconLoader />,
-});
-const IconRedux = dynamic(() => import("#/src/components/Icons/logo/IconRedux"), {
-  ssr: false,
-  loading: () => <SkillIconLoader />,
-});
-const IconSass = dynamic(() => import("#/src/components/Icons/logo/IconSass"), {
-  ssr: false,
-  loading: () => <SkillIconLoader />,
-});
-const IconStyled = dynamic(() => import("#/src/components/Icons/logo/IconStyled"), {
-  ssr: false,
-  loading: () => <SkillIconLoader />,
-});
-const IconTailwind = dynamic(() => import("#/src/components/Icons/logo/IconTailwind"), {
-  ssr: false,
-  loading: () => <SkillIconLoader />,
-});
-const IconTypescript = dynamic(() => import("#/src/components/Icons/logo/IconTypescript"), {
-  ssr: false,
-  loading: () => <SkillIconLoader />,
-});
+import IconAws from "#/src/components/Icons/logo/IconAws";
+import IconCss from "#/src/components/Icons/logo/IconCss";
+import IconHtml from "#/src/components/Icons/logo/IconHtml";
+import IconJava from "#/src/components/Icons/logo/IconJava";
+import IconJavascript from "#/src/components/Icons/logo/IconJavascript";
+import IconJquery from "#/src/components/Icons/logo/IconJquery";
+import IconMobx from "#/src/components/Icons/logo/IconMobx";
+import IconMongo from "#/src/components/Icons/logo/IconMongo";
+import IconMui from "#/src/components/Icons/logo/IconMui";
+import IconMysql from "#/src/components/Icons/logo/IconMysql";
+import IconNextjs from "#/src/components/Icons/logo/IconNextjs";
+import IconNode from "#/src/components/Icons/logo/IconNode";
+import IconReact from "#/src/components/Icons/logo/IconReact";
+import IconReactQuery from "#/src/components/Icons/logo/IconReactQuery";
+import IconRecoil from "#/src/components/Icons/logo/IconRecoil";
+import IconRedux from "#/src/components/Icons/logo/IconRedux";
+import IconSass from "#/src/components/Icons/logo/IconSass";
+import IconStyled from "#/src/components/Icons/logo/IconStyled";
+import IconTailwind from "#/src/components/Icons/logo/IconTailwind";
+import IconTypescript from "#/src/components/Icons/logo/IconTypescript";
 
 export {
   IconAws,

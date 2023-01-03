@@ -1,25 +1,21 @@
-"use client";
-
-import dynamic from "next/dynamic";
 import ExperienceSkeleton from "#/src/components/main/Experience/ExperienceSkeleton";
-import {useProjectQuery} from "#/src/hooks/query/useProjectQuery";
+import ExperienceItem from "#/src/components/main/Experience/ExperienceItem";
+import {Project} from "#/src/types";
 
-const ExperienceItem = dynamic(() => import("#/src/components/main/Experience/ExperienceItem"), {
-  ssr: false,
-});
+type ExperienceListProps = {
+  project: Project[];
+};
 
-const ExperienceList: React.FC = () => {
-  const {isLoading, data} = useProjectQuery();
-
+const ExperienceList: React.FC<ExperienceListProps> = ({project}) => {
   return (
     <div className="flex flex-col gap-4">
-      {isLoading ? (
+      {!project ? (
         <div className="flex flex-col gap-4 mt-4">
           <ExperienceSkeleton />
           <ExperienceSkeleton />
         </div>
-      ) : data ? (
-        data?.map(d => <ExperienceItem key={d._id} data={d} />)
+      ) : project ? (
+        project?.map(data => <ExperienceItem key={data._id} data={data} />)
       ) : (
         <div>
           <p>:- (</p>

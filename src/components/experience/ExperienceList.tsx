@@ -7,7 +7,7 @@ type ExperienceListProps = {
 
 const ExperienceList: React.FC<ExperienceListProps> = ({data}) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">
       {data?.map(project => (
         <ExperienceItem key={project._id} data={project} />
       ))}

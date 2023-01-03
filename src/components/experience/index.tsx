@@ -1,16 +1,8 @@
-"use client";
-
-import dynamic from "next/dynamic";
-import {useProjectQuery} from "#/src/hooks/query/useProjectQuery";
 import ExperienceSkeletion from "#/src/components/experience/ExperienceSkeletion";
-const ExperienceList = dynamic(() => import("#/src/components/experience/ExperienceList"), {
-  ssr: false,
-});
+import ExperienceList from "#/src/components/experience/ExperienceList";
 
-const Experience = () => {
-  const {isLoading, data} = useProjectQuery();
-
-  if (isLoading || !data) {
+const Experience = ({data}: any) => {
+  if (!data) {
     return <ExperienceSkeletion />;
   }
 

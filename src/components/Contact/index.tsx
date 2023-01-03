@@ -33,15 +33,15 @@ const Contact = () => {
     exitDelay: EXIT_DELAY,
   });
 
-  useLayoutEffect(() => {
-    const timer = setTimeout(() => {
-      setIsOpen(prev => !prev);
-    }, OPEN_TIMER);
+  // useLayoutEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setIsOpen(prev => !prev);
+  //   }, OPEN_TIMER);
 
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
+  //   return () => {
+  //     clearTimeout(timer);
+  //   };
+  // }, []);
 
   const sendMessage = (e: React.FormEvent<HTMLFormElement>) => {
     const token = TELEGRAM_ENV.token;

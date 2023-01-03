@@ -1,9 +1,13 @@
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import IconArrow from "#/src/components/Icons/IconArrow";
 import ExperienceList from "#/src/components/main/Experience/ExperienceList";
+import {Project} from "#/src/types";
 
-const Experience: React.FC = () => {
+type ExperienceProps = {
+  project: Project[];
+};
+
+const Experience: React.FC<ExperienceProps> = ({project}) => {
   return (
     <article className="flex flex-col w-full">
       <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-2 text-black dark:text-white ">
@@ -11,7 +15,7 @@ const Experience: React.FC = () => {
       </h3>
 
       <div className="flex gap-6 flex-col w-full">
-        <ExperienceList />
+        <ExperienceList project={project} />
       </div>
 
       <Link

@@ -17,3 +17,5 @@ export const GITHUB_AUTH = {
   clientId: process.env.OAUTH_CLIENT_KEY as string,
   clientSecret: process.env.OAUTH_CLIENT_SECRET as string,
 };
+
+export const SANITY_URL = `https://${SANITY_ENV.projectId}.api.sanity.io/v1/data/query/${SANITY_ENV.dataset}`;

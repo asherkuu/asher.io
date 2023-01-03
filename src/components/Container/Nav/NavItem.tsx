@@ -15,6 +15,7 @@ const NavItem: React.FC<NavItemProps> = ({href, text}) => {
   return (
     <Link
       href={href}
+      prefetch
       className={clsx(
         isActive
           ? "font-semibold text-gray-800 dark:text-gray-200"
