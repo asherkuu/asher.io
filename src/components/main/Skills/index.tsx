@@ -1,34 +1,26 @@
-"use client";
-import dynamic from "next/dynamic";
-const SkillIcon = dynamic(() => import("#/src/components/main/Skills/SkillIcon"), {ssr: false});
-const IconAws = dynamic(() => import("#/src/components/Icons/logo/IconAws"), {ssr: false});
-const IconCss = dynamic(() => import("#/src/components/Icons/logo/IconCss"), {ssr: false});
-const IconHtml = dynamic(() => import("#/src/components/Icons/logo/IconHtml"), {ssr: false});
-const IconJava = dynamic(() => import("#/src/components/Icons/logo/IconJava"), {ssr: false});
-const IconJavascript = dynamic(() => import("#/src/components/Icons/logo/IconJavascript"), {
-  ssr: false,
-});
-const IconJquery = dynamic(() => import("#/src/components/Icons/logo/IconJquery"), {ssr: false});
-const IconMobx = dynamic(() => import("#/src/components/Icons/logo/IconMobx"), {ssr: false});
-const IconMongo = dynamic(() => import("#/src/components/Icons/logo/IconMongo"), {ssr: false});
-const IconMui = dynamic(() => import("#/src/components/Icons/logo/IconMui"), {ssr: false});
-const IconMysql = dynamic(() => import("#/src/components/Icons/logo/IconMysql"), {ssr: false});
-const IconNextjs = dynamic(() => import("#/src/components/Icons/logo/IconNextjs"), {ssr: false});
-const IconNode = dynamic(() => import("#/src/components/Icons/logo/IconNode"), {ssr: false});
-const IconReact = dynamic(() => import("#/src/components/Icons/logo/IconReact"), {ssr: false});
-const IconReactQuery = dynamic(() => import("#/src/components/Icons/logo/IconReactQuery"), {
-  ssr: false,
-});
-const IconRecoil = dynamic(() => import("#/src/components/Icons/logo/IconRecoil"), {ssr: false});
-const IconRedux = dynamic(() => import("#/src/components/Icons/logo/IconRedux"), {ssr: false});
-const IconSass = dynamic(() => import("#/src/components/Icons/logo/IconSass"), {ssr: false});
-const IconStyled = dynamic(() => import("#/src/components/Icons/logo/IconStyled"), {ssr: false});
-const IconTailwind = dynamic(() => import("#/src/components/Icons/logo/IconTailwind"), {
-  ssr: false,
-});
-const IconTypescript = dynamic(() => import("#/src/components/Icons/logo/IconTypescript"), {
-  ssr: false,
-});
+import SkillIcon from "#/src/components/main/Skills/SkillIcon";
+import {
+  IconAws,
+  IconCss,
+  IconHtml,
+  IconJava,
+  IconJavascript,
+  IconJquery,
+  IconMobx,
+  IconMongo,
+  IconMui,
+  IconMysql,
+  IconNextjs,
+  IconNode,
+  IconReact,
+  IconReactQuery,
+  IconRecoil,
+  IconRedux,
+  IconSass,
+  IconStyled,
+  IconTailwind,
+  IconTypescript,
+} from "#/src/components/main/Skills/Icons";
 
 const Skills: React.FC = () => {
   return (
