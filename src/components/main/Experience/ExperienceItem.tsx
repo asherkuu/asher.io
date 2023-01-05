@@ -9,7 +9,7 @@ type ExperienceItemProps = {
 
 const ExperienceItem: React.FC<ExperienceItemProps> = ({data}) => {
   const startedAt = dayjs(data?.workStartedAt).format("YYYY. MM.");
-  const endedAt = dayjs(data?.workStartedAt).format("YYYY. MM.");
+  const endedAt = dayjs(data?.workEndedAt).format("YYYY. MM.");
 
   return (
     <div className="flex flex-col w-full [&:not(:last-child)]:border-b-[1px] border-peri-300 py-8 transform transition-all hover:scale-[1.01]">

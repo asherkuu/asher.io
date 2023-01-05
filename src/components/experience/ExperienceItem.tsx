@@ -10,7 +10,7 @@ type ExperienceItemProps = {
 
 const ExperienceItem: React.FC<ExperienceItemProps> = ({data}) => {
   const startedAt = dayjs(data?.workStartedAt).format("YYYY. MM.");
-  const endedAt = dayjs(data?.workStartedAt).format("YYYY. MM.");
+  const endedAt = dayjs(data?.workEndedAt).format("YYYY. MM.");
 
   return (
     <Link href={`/experience/${data.slug}`} passHref>
