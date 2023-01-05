@@ -24,7 +24,7 @@ const intialInformation = {
   content: HTMLTextAreaElement | null;
 };
 
-const OPEN_TIMER = 10000;
+const OPEN_TIMER = 20000;
 const ENTER_DELAY = 20;
 const EXIT_DELAY = 300;
 
@@ -38,15 +38,15 @@ const Contact = () => {
     exitDelay: EXIT_DELAY,
   });
 
-  // useLayoutEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setIsOpen(true);
-  //   }, OPEN_TIMER);
+  useLayoutEffect(() => {
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, OPEN_TIMER);
 
-  //   return () => {
-  //     clearTimeout(timer);
-  //   };
-  // }, []);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
 
   const sendMessage = (e: React.FormEvent<HTMLFormElement>) => {
     setLoading(true);
