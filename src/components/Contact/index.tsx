@@ -30,7 +30,7 @@ const EXIT_DELAY = 300;
 
 const Contact = () => {
   const informationRef = useRef<typeof intialInformation>(intialInformation);
-  const [isOpen, setIsOpen] = useState<boolean>(true);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
 
   const {mounted: isMenuMounted, rendered: isMenuRendered} = useDelayedRender(isOpen, {
