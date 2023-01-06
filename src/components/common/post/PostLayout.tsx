@@ -38,7 +38,7 @@ const PostLayout: React.FC<PostLayoutProps> = ({children, post}) => {
         </p>
       </div>
       <Suspense fallback={null}>
-        <div className="w-full mt-4 prose dark:prose-dark max-w-none">{children}</div>
+        <div className="post-layout w-full mt-4 prose dark:prose-dark max-w-none">{children}</div>
       </Suspense>
     </article>
   );

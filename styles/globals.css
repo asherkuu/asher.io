@@ -222,3 +222,7 @@ table {
 .col-center {
   @apply flex flex-col justify-center  items-center;
 }
+
+.post-layout img {
+  @apply rounded-lg;
+}
