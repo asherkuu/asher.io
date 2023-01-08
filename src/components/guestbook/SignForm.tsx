@@ -31,11 +31,9 @@ const SignForm: React.FC<SignFormProps> = ({
   return (
     <div className="rounded-2xl p-6 mb-8 w-full border border-peri-700 dark:border-peri-200 bg-peri-200 dark:bg-peri-50 shadow-lg">
       <h5 className="text-lg md:text-xl font-bold text-gray-900 dark:text-gray-100">
-        Sign the Guestbook
+        방명록 남기기
       </h5>
-      <p className="my-1 text-gray-800 dark:text-gray-200">
-        Share a message for a future visitor of my site.
-      </p>
+      <p className="my-1 text-gray-800 dark:text-gray-200">다같이 메세지를 공유해봐요.</p>
       {sessionStatus === "loading" ? (
         <SkeletonContainer>
           <Skeleton className="w-full h-10 rounded-sm my-4" />
@@ -50,7 +48,7 @@ const SignForm: React.FC<SignFormProps> = ({
           }}
           passHref
         >
-          Login
+          로그인
         </Link>
       ) : (
         session?.user && (
@@ -67,7 +65,7 @@ const SignForm: React.FC<SignFormProps> = ({
             <Button
               type="submit"
               className="flex items-center justify-center absolute right-2 top-2 px-4 font-medium h-8 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 w-28"
-              label={form.state === Form.Loading ? <LoadingSpinner /> : "Sign"}
+              label={form.state === Form.Loading ? <LoadingSpinner /> : "등록"}
             />
           </form>
         )
@@ -78,7 +76,7 @@ const SignForm: React.FC<SignFormProps> = ({
         <SuuccessMessage>{form.message}</SuuccessMessage>
       ) : (
         <p className="text-sm text-gray-800 dark:text-gray-200">
-          Your information is only used to display your name and reply by email.
+          당신의 정보는 댓글용으로 아이디만 수집됩니다.
         </p>
       )}
     </div>

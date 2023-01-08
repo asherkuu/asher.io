@@ -1,17 +1,20 @@
 import dayjs from "dayjs";
-import Button from "../Controls/Button";
+import Button from "#/src/components/Controls/Button";
+import {GuestbookTypes} from "#/src/types";
 
 type MessageItemProps = {
-  item: any;
+  item: GuestbookTypes;
   user: any;
+  onDelete: (id: string) => void;
 };
 
-const MessageItem: React.FC<MessageItemProps> = ({item, user}) => {
+const MessageItem: React.FC<MessageItemProps> = ({item, user, onDelete}) => {
   const isMine = user && item.created_by === user.name;
   const updatedAt = dayjs(new Date(item.updated_at)).format("d MMM YYYY h:mm A");
 
   const handleClickDelete = async (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
+    await onDelete(item.id);
   };
 
   return (

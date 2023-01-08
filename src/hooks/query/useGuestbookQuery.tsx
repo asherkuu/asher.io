@@ -1,7 +1,8 @@
-import {InfiniteData, useInfiniteQuery, useMutation, useQuery} from "@tanstack/react-query";
+import {InfiniteData, useInfiniteQuery, useMutation} from "@tanstack/react-query";
 import {GuestbookTypes, InfinityResponseType} from "#/src/types";
 import {queryClient} from "#/src/query/queryClient";
 import {useLastIdStore} from "#/src/store/gusetbook";
+import {toast} from "react-hot-toast";
 
 type UseGuestBookMutateProps = {
   value: string;
@@ -55,6 +56,42 @@ export const useGuestbookMutation = () => {
           if (oldData) {
             const newData = {...oldData};
             newData?.pages[0]?.body?.unshift(data);
+            return newData;
+          } else {
+            return undefined;
+          }
+        },
+      );
+    },
+  });
+};
+
+export const useGuestbookDeleteMutation = () => {
+  return useMutation({
+    mutationFn: async ({id}: {id: string}) => {
+      return await fetch(`/api/guestbook/${id}`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "DELETE",
+      }).then(res => res.json());
+    },
+    onSuccess(data: GuestbookTypes) {
+      queryClient.setQueryData<InfiniteData<InfinityResponseType<GuestbookTypes[]>>>(
+        ["guestbook"],
+        oldData => {
+          if (oldData) {
+            const newData = {...oldData};
+
+            newData.pages.map((page, index) => {
+              const filtered = page.body.filter(
+                item => Number(item.id) !== Number(data.id) && item,
+              );
+              newData.pages[index].body = filtered;
+              return page.body.filter(item => Number(item.id) !== Number(data.id) && item);
+            });
+
+            toast.success("삭제되었습니다.");
             return newData;
           } else {
             return undefined;

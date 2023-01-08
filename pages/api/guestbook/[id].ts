@@ -34,7 +34,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       },
     });
 
-    return res.status(204).json({});
+    return res.status(200).json({id});
   }
 
   if (req.method === "PUT") {
