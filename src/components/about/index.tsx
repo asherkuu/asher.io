@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -36,7 +35,7 @@ const About = () => {
           <li>병역: 병장 만기전역</li>
         </ul>
         <h3>Job Title</h3>
-        <p>김선규, 3+years FrontEnd Developer Experience at BSS Compay now.</p>
+        <p>김선규, 3+years FrontEnd Developer Experience at Huevertech now.</p>
 
         <h3>Education</h3>
         <p>
